@@ -1,0 +1,10 @@
+$grid-columns: 12;
+
+$xs-max: 46.9375rem;
+$sm-max: 62.9375rem;
+$md-max: 118.9375rem;
+$lg-max: 158.9375rem;
+$gutter: 0.625rem;
+$content-well-max-width: 88.75rem;
+
+@import 'node_modules/@drewbot/sass-flexbox-grid/public/sass-flexbox/scss/main.scss';

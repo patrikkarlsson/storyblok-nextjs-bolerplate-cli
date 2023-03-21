@@ -1,0 +1,27 @@
+{
+  "name": "row",
+  "display_name": "Row",
+  "schema": {
+    "body": {
+      "type": "bloks",
+      "pos": 0,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "column"
+      ],
+      "minimum": 1
+    },
+    "style": {
+      "type": "custom",
+      "field_type": "sassflexboxgrid-row",
+      "options": [],
+      "datasource_slug": ""
+    }
+  },
+  "image": null,
+  "is_root": false,
+  "is_nestable": true,
+  "real_name": "row",
+  "component_group_uuid": null
+}

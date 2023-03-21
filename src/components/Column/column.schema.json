@@ -1,0 +1,42 @@
+{
+  "name": "column",
+  "display_name": "Column",
+  "schema": {
+    "body": {
+      "type": "bloks",
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "content"
+      ]
+    },
+    "style": {
+      "type": "custom",
+      "field_type": "sassflexboxgrid-column",
+      "options": [],
+      "datasource_slug": ""
+    },
+    "visibility": {
+      "type": "custom",
+      "field_type": "sassflexboxgrid-visibility",
+      "options": [],
+      "datasource_slug": ""
+    },
+    "spacing": {
+      "type": "options",
+      "source": "internal",
+      "datasource_slug": "spacing"
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "b-colors",
+      "options": [],
+      "datasource_slug": "colors"
+    }
+  },
+  "image": null,
+  "is_root": false,
+  "is_nestable": true,
+  "real_name": "column",
+  "component_group_uuid": null
+}

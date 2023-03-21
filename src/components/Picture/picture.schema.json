@@ -1,0 +1,28 @@
+{
+  "name": "picture",
+  "display_name": "Picture",
+  "schema": {
+    "sources": {
+      "type": "bloks",
+      "pos": 0,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "picture_source"
+      ]
+    },
+    "fallback_img": {
+      "type": "asset",
+      "filetypes": ["images"],
+      "translatable": false,
+      "required": true,
+      "regex": "",
+      "display_name": "Fallback image"
+    }
+  },
+  "image": null,
+  "is_root": false,
+  "is_nestable": true,
+  "real_name": "picture",
+  "component_group_uuid": null
+}

@@ -1,0 +1,34 @@
+{
+  "name": "page",
+  "display_name": "Page",
+  "schema": {
+    "meta": {
+      "type": "custom",
+      "field_type": "meta-fields",
+      "options": [],
+      "pos": 0
+    },
+    "body": {
+      "type": "bloks",
+      "pos": 1,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "section"
+      ]
+    },
+    "tab": {
+      "display_name": "Meta",
+      "keys": [
+        "meta"
+      ],
+      "pos": 2,
+      "type": "tab"
+    }
+  },
+  "image": null,
+  "is_root": true,
+  "is_nestable": false,
+  "real_name": "page",
+  "component_group_uuid": null
+}

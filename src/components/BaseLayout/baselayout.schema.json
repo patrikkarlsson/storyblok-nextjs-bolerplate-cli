@@ -1,0 +1,20 @@
+{
+  "name": "baselayout",
+  "display_name": "BaseLayout",
+  "schema": {
+    "main_menu": {
+      "type": "bloks",
+      "pos": 1,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "menu_item"
+      ]
+    }
+  },
+  "image": null,
+  "is_root": true,
+  "is_nestable": false,
+  "real_name": "baselayout",
+  "component_group_uuid": null
+}

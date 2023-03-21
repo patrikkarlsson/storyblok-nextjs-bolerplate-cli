@@ -1,0 +1,26 @@
+{
+  "name": "picture_source",
+  "display_name": "Picture Source",
+  "schema": {
+    "image": {
+      "type": "asset",
+      "filetypes": ["images"],
+      "translatable": false,
+      "required": true,
+      "regex": "",
+      "display_name": "Image"
+    },
+    "media_query": {
+      "type": "options",
+      "use_uuid": true,
+      "source": "internal",
+      "datasource_slug": "mediaquery",
+      "exclude_empty_option": true
+    }
+  },
+  "image": null,
+  "is_root": false,
+  "is_nestable": true,
+  "real_name": "picture_source",
+  "component_group_uuid": null
+}

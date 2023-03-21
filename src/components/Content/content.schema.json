@@ -1,0 +1,63 @@
+{
+  "name": "content",
+  "display_name": "Content",
+  "schema": {
+    "content": {
+      "type": "richtext",
+      "customize_toolbar": true,
+      "toolbar": [
+        "bold",
+        "italic",
+        "strike",
+        "underline",
+        "h1",
+        "paragraph",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "list",
+        "olist",
+        "quote",
+        "hrule",
+        "link",
+        "image",
+        "blok"
+      ],
+      "style_options": [],
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": ["picture"]
+    },
+    "text_color": {
+      "type": "custom",
+      "use_uuid": true,
+      "options": [],
+      "field_type": "b-colors"
+    },
+    "text_align": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "name": "Left",
+          "value": "left"
+        },
+        {
+          "value": "center",
+          "name": "Center"
+        },
+        {
+          "value": "right",
+          "name": "Right"
+        }
+      ],
+      "default_value": "left"
+    }
+  },
+  "is_root": false,
+  "is_nestable": true,
+  "real_name": "content",
+  "component_group_uuid": null
+}

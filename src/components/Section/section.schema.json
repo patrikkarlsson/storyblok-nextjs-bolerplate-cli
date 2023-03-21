@@ -1,0 +1,32 @@
+{
+  "name": "section",
+  "display_name": "Section",
+  "schema": {
+    "body": {
+      "type": "bloks",
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "row"
+      ]
+    },
+    "spacing": {
+      "type": "options",
+      "use_uuid": true,
+      "source": "internal",
+      "datasource_slug": "spacing",
+      "exclude_empty_option": true
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "b-colors",
+      "options": [],
+      "datasource_slug": "colors"
+    }
+  },
+  "image": null,
+  "is_root": false,
+  "is_nestable": true,
+  "real_name": "section",
+  "component_group_uuid": null
+}

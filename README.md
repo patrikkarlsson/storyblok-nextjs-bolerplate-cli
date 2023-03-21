@@ -1,0 +1,1 @@
+# storyblok-nextjs-bolerplate-cli
