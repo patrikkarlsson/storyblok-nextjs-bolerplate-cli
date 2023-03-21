@@ -1,15 +1,5 @@
 import inquirer from 'inquirer'
 import uploader from './uploader.js'
-// import datasources from './schemas/datasources/index.js'
-// import components from './schemas/components/index.js'
-
-
-
-// const sync = async ({ STORYBLOK_PERSONAL_ACCESS_TOKEN, STORYBLOK_SPACE_ID, componentSchemasToAdd }) => {
-//   const storyblokApi = uploader({ STORYBLOK_PERSONAL_ACCESS_TOKEN, STORYBLOK_SPACE_ID })
-//   await datasources({ storyblokApi }).upload()
-//   await components({ storyblokApi }).upload(componentSchemasToAdd)
-// }
 
 const uploaderPrompt = () => {
   const prompt = inquirer.createPromptModule()

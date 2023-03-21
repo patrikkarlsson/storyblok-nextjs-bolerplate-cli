@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import uploader from './uploader/prompt.js'
 import base from './src/base/prompt.js'
 import datasources from './uploader/schemas/datasources/prompt.js'

@@ -1,6 +1,9 @@
 import inquirer from 'inquirer'
 import fs from 'fs-extra'
 import path from 'path'
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const prompt = () => {
   
@@ -9,9 +12,9 @@ const prompt = () => {
   const foldersToCopy = ['context', 'hooks', 'pages', 'scss', 'styled', 'lib']
   const foldersToCopyPromsises = []
 
-  const copyFolder = (folder, __dirname) => {
+  const copyFolder = (folder, currentDir) => {
     return new Promise((resolve, reject) => {
-      fs.copy(path.resolve(`./src/base/${folder}`), `${__dirname}/src/${folder}`, (err) => {
+      fs.copy(path.join(__dirname, folder), `${currentDir}/src/${folder}`, (err) => {
         if (err) {
           reject(err)
         }

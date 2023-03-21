@@ -1,12 +1,16 @@
 import inquirer from 'inquirer'
 import fs from 'fs-extra'
+import { fileURLToPath } from 'url'
+import path from 'path'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const datasourcesPrompt = () => {
   const prompt = inquirer.createPromptModule()
 
   const SCHEMA_COMPONENTS = ['BaseLayout']
 
-  const createPrompt = (storyblokApi, __dirname) => {
+  const createPrompt = (storyblokApi, currentDir) => {
 
     const uploadComponent = (component) => {
       return storyblokApi.post('/components', {
@@ -18,7 +22,7 @@ const datasourcesPrompt = () => {
 
     const createComponentDir = (component) => {
       return new Promise((resolve, reject) => {
-        fs.mkdir(`${__dirname}/src/components/${component}`, { recursive: true }, (err) => {
+        fs.mkdir(`${currentDir}/src/components/${component}`, { recursive: true }, (err) => {
           if (err) {
             resolve(false)
           }
@@ -29,13 +33,13 @@ const datasourcesPrompt = () => {
 
     const copyComponent = (component) => {
       return new Promise((resolve, reject) => {
-        fs.readdir(`./src/components/${component}`, (err, files) => {
+        fs.readdir(path.join(__dirname, component), (err, files) => {
           if (err) {
             reject(err)
           }
           files.forEach((file) => {
             if (file.indexOf('.schema.json') === -1) {
-              fs.copy(`./src/components/${component}/${file}`, `${__dirname}/src/components/${component}/${file}`, { overwrite: false }, (err) => {
+              fs.copy(path.join(__dirname, component, file), `${currentDir}/src/components/${component}/${file}`, { overwrite: false }, (err) => {
                 if (err) {
                   reject(err)
                 }
@@ -49,7 +53,7 @@ const datasourcesPrompt = () => {
 
     const readComponentSchema = (component) => {
       return new Promise((resolve) => {
-        fs.readFile(`./src/components/${component}/${component.toLowerCase()}.schema.json`, 'utf8', (err, data) => {
+        fs.readFile(path.join(__dirname, component, `${component.toLowerCase()}.schema.json`), 'utf8', (err, data) => {
           if (err || !data) {
             return resolve(false)
           }
