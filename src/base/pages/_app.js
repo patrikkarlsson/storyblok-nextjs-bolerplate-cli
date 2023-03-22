@@ -1,4 +1,4 @@
-import '@/styles/base.scss'
+import '@/scss/base.scss'
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -18,7 +18,7 @@ import {
   generateSpacing,
   generateMQ,
 } from '@/styled'
-import { DefaultGlobals } from '@/theme/defaultGlobals'
+import { DefaultGlobals } from '@/styled/default'
 
 
 gsap.registerPlugin(ScrollTrigger)

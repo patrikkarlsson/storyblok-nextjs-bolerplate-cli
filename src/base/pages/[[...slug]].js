@@ -2,7 +2,7 @@
 
 import Head from 'next/head'
 import { notFound } from 'next/navigation'
-import { locales } from './../../locales'
+import { locales } from '@/locales'
 import { useStore } from '@/lib/store'
 import Layout from '@/components/Layout'
 

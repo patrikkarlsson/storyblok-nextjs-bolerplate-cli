@@ -96,7 +96,7 @@ const datasourcesPrompt = () => {
             return uploadComponent(componentSchema)
           }).then(() => {
             if (SCHEMA_COMPONENTS.includes(component)) {
-              return resolve()
+              return resolve(true)
             }
             return Promise.resolve()
           }).then(() => {
