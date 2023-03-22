@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { notFound } from 'next/navigation'
 import { locales } from '@/locales'
 import { useStore } from '@/lib/store'
-import Layout from '@/components/Layout'
+import Layout from '@/components/Layout/Layout'
 
 import {
   getStoryblokApi,
@@ -13,13 +13,10 @@ import {
 } from '@storyblok/react'
 import { render } from 'storyblok-rich-text-react-renderer'
 
-import components, {
-  DynamicComponent,
-  AppContext,
-  StoryblokHelper
-} from '@/storyblok/'
-
-import localComponents from '@/components/'
+import StoryblokHelper from '@/storyblok'
+import DynamicComponent from '@/components/DynamicComponent'
+import AppContext from '@/context/AppContext'
+import components from '@/components/'
 
 export default function Page({ story, global, theme, locales }) {
 
@@ -27,7 +24,7 @@ export default function Page({ story, global, theme, locales }) {
 
   const blokResolvers = {}
 
-  const dynamicComponent = new DynamicComponent(localComponents, render, blokResolvers, theme, storyblokEditable)
+  const dynamicComponent = new DynamicComponent(components, render, blokResolvers, storyblokEditable)
 
   story = useStoryblokState(story)
 
@@ -35,6 +32,7 @@ export default function Page({ story, global, theme, locales }) {
     <AppContext.Provider
       value={{
         locales,
+        DynamicComponent: dynamicComponent,
       }}
     >
       { story.content.meta ? <Head>{components.head(story.content.meta)}</Head> : null }

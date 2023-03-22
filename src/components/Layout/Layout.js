@@ -5,8 +5,8 @@ import Lenis from '@studio-freight/lenis'
 import { useFrame } from '@studio-freight/hamo'
 
 import { useStore } from '@/lib/store'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '@/components/Header/Header'
+import Footer from '@/components/Footer/Footer'
 
 const Container = styled.div`
   ${({ theme }) => css`

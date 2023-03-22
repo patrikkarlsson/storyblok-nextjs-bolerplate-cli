@@ -1,43 +1,30 @@
 import styled from 'styled-components'
-import PictureSource from './PictureSource'
-import React, { Component } from 'react'
+import PictureSource from '@/components/PictureSource/PictureSource'
 
-class Picture extends Component {
+const Picture = styled.picture`
+display: flex;
+width: 100%;
 
-  constructor() {
-    super()
+img {
+  height: auto;
+  width: 100%;
+}
+`
 
-    this.element = styled.picture`
-      display: flex;
-      width: 100%;
-    
-      img {
-        height: auto;
-        width: 100%;
-      }
-    `
-  }
-
-  render() {
-    const Picture = this.element
-    const { theme, blok, storyblokEditable } = this.props
-    return (
-      <Picture {...storyblokEditable(blok)} theme={theme}>
+export default ({ blok, storyblokEditable }) => {
+  return (
+    <Picture {...storyblokEditable(blok)}>
       {blok.sources ? 
         blok.sources.map((source, index) => (
-          <PictureSource theme={theme} blok={source} key={index} />
+          <PictureSource blok={source} key={index} />
         ))
         : null
       }
       {
-        blok.fallback_image ? (
-          <img src={blok.fallback_image.filename} alt={blok.fallback_image.alt} />
+        blok.fallback_img ? (
+          <img src={blok.fallback_img.filename} alt={blok.fallback_img.alt} />
         ) : null
-      }
-      
-  </Picture>
-    )
-  }
+      }  
+    </Picture>
+  )
 }
-
-export default Picture

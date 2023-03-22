@@ -8,19 +8,18 @@ const Header = styled.header`
   `}
 `
 
-const Top = ({ theme, global }) => {
+const Top = ({ global }) => {
 
   const router = useRouter()
 
   useEffect(() => {
-    router.events.on('routeChangeStart', () => setShowMobileMenu(false))
-    return () => router.events.off('routeChangeStart', () => setShowMobileMenu(false))
+    router.events.on('routeChangeStart', () => {})
+    return () => router.events.off('routeChangeStart', () => { })
   }, [router.events])
 
   
   return (
-    <Header theme={theme}>
-      <img src="/img/faktum-logo.svg" />
+    <Header>
     </Header>
   )
 }

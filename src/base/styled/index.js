@@ -5,7 +5,9 @@ import {
   generateTypographySettings,
   generateSpacing,
   generateFontFaces,
-  DefaultTheme } from './default'
+  DefaultTheme } from './defaultTheme'
+
+  import { DefaultGlobals } from './defaultGlobal'
 
 export {
   generateColors,
@@ -15,4 +17,5 @@ export {
   generateSpacing,
   generateFontFaces,
   generateTypographySettings,
+  DefaultGlobals,
 }

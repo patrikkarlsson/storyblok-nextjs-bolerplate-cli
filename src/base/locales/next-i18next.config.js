@@ -1,4 +1,4 @@
-const { locales, defaultLocale } = require('./src/locales')
+const { locales, defaultLocale } = require('.')
 
 module.exports = {
   i18n: {

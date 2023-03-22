@@ -8,17 +8,18 @@ import { useScroll } from '@/hooks/use-scroll'
 import { useStore } from '@/lib/store'
 import { useLayoutEffect } from 'react'
 
+import { ThemeProvider } from 'styled-components'
+
 import { 
   DefaultTheme,
-  ThemeProvider,
   generateColors,
   generateTypographySettings,
   generateFontNames,
   generateFontFaces,
   generateSpacing,
   generateMQ,
+  DefaultGlobals,
 } from '@/styled'
-import { DefaultGlobals } from '@/styled/default'
 
 
 gsap.registerPlugin(ScrollTrigger)

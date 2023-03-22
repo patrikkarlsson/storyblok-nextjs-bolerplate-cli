@@ -7,8 +7,8 @@ class DynamicComponent {
   }
 
   render(blok, key) {
-    if (typeof this.localComponents[blok.component] !== 'undefined') {
-      const Component = this.localComponents[blok.component]
+    if (typeof this.components[blok.component] !== 'undefined') {
+      const Component = this.components[blok.component]
     
       return (
         <Component

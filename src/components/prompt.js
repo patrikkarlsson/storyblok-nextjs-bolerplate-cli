@@ -13,10 +13,15 @@ const datasourcesPrompt = () => {
   const createPrompt = (storyblokApi, currentDir) => {
 
     const uploadComponent = (component) => {
-      return storyblokApi.post('/components', {
-        component,
-      }).then(() => {
-        console.log(`Component ${component.name} uploaded!`)
+      return new Promise((resolve, reject) => {
+        return storyblokApi.post('/components', {
+          component,
+        }).then(() => {
+          console.log(`Component ${component.name} uploaded!`)
+          resolve()
+        }).catch((err) => {
+          resolve()  
+        })
       })
     }
 
@@ -58,6 +63,17 @@ const datasourcesPrompt = () => {
             return resolve(false)
           }
           resolve(JSON.parse(data))
+        })
+      })
+    }
+
+    const moveComponentExport = () => {
+      return new Promise((resolve) => {
+        fs.copy(path.join(__dirname, 'index.js'), `${currentDir}/src/components/index.js`, { overwrite: false }, (err) => {
+          if (err) {
+            reject(err)
+          }
+          resolve()
         })
       })
     }
@@ -107,7 +123,10 @@ const datasourcesPrompt = () => {
             }
             return Promise.resolve()
           }).then(() => {
-            resolve()
+            return moveComponentExport()
+            .then(() => {
+              resolve()
+            })
           }).catch((err) => {
             console.log('Something went wrong: ', err)
           })

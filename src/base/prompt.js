@@ -9,18 +9,8 @@ const prompt = () => {
   
   const prompt = inquirer.createPromptModule()
   
-  const foldersToCopy = ['context', 'hooks', 'pages', 'scss', 'styled', 'lib', 'locales']
+  const foldersToCopy = ['context', 'hooks', 'pages', 'scss', 'styled', 'lib', 'locales', 'storyblok']
   const foldersToCopyPromsises = []
-
-  const handleLocales = (currentDir, folder, resolve, reject) => {
-    const filename = 'next-i18next.config.js'
-    fs.rename(path.join(currentDir, folder, filename), path.join(currentDir, filename), (err) => {
-      if (err) {
-        reject(err)
-      }
-      return resolve()
-    })
-  }
 
   const copyFolder = (folder, currentDir) => {
     return new Promise((resolve, reject) => {
@@ -28,11 +18,8 @@ const prompt = () => {
         if (err) {
           reject(err)
         }
-        if (folder != 'locales') {
-          console.log(`Copied folder: ${folder}`)
-          return resolve()
-        }
-        handleLocales(currentDir, folder, resolve, reject)
+        console.log(`Copied folder: ${folder}`)
+        return resolve()
       })
     })
   }

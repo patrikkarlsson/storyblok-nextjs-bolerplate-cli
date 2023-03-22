@@ -5,7 +5,7 @@ class Content extends Component {
   constructor() {
     super()
     this.element = styled.div`
-      ${({ textColor, textAlign }) => css`
+      ${({ theme, textColor, textAlign }) => css`
           width: 100%;
           text-align: ${textAlign};
 
