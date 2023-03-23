@@ -1,6 +1,6 @@
 {
   "name": "storyblok-nextjs-bolerplate-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Storyblok Nextjs Boilerplate CLI",
   "main": "index.js",
   "type": "module",

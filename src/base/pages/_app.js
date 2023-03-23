@@ -2,7 +2,6 @@ import '@/scss/base.scss'
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { appWithTranslation } from 'next-i18next'
 import { storyblokInit, apiPlugin } from '@storyblok/react'
 import { useScroll } from '@/hooks/use-scroll'
 import { useStore } from '@/lib/store'
@@ -127,4 +126,4 @@ function App({ pageProps, Component }) {
   )
 }
 
-export default appWithTranslation(App)
+export default App

@@ -15,10 +15,18 @@ const uploaderPrompt = () => {
         type: 'input',
         name: 'STORYBLOK_SPACE_ID',
         message: 'Enter your storyblok space id:',
+      },
+      {
+        type: 'input',
+        name: 'STORYBLOK_TOKEN',
+        message: 'Enter your storyblok token:',
       }
-    ]).then(({ STORYBLOK_PERSONAL_ACCESS_TOKEN, STORYBLOK_SPACE_ID }) => {
+    ]).then(({ STORYBLOK_PERSONAL_ACCESS_TOKEN, STORYBLOK_SPACE_ID, STORYBLOK_TOKEN }) => {
       const storyblokApi = uploader({ STORYBLOK_PERSONAL_ACCESS_TOKEN, STORYBLOK_SPACE_ID })
-      return storyblokApi
+      return { 
+        storyblokApi,
+        STORYBLOK_TOKEN,
+      }
     })
   }
 
