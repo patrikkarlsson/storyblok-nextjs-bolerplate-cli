@@ -56,12 +56,14 @@ export async function getStaticProps(context) {
   
   const storyblokApi = getStoryblokApi()
 
+  const preview = context.preview || false
+
   const storyblokHelper = new StoryblokHelper(storyblokApi, locales, 'start', 'BaseLayout')
-  const version = process.env.APP_ENV === 'production' ? 'published' : 'draft'
+  const version = process.env.APP_ENV !== 'production' || preview ? 'draft' : 'published'
 
   const story = await storyblokHelper.getStory(!params.slug ? [locale] : [locale].concat(params.slug), version)
   const global = await storyblokHelper.getStory([locale, 'baselayout'], version)
-  
+
   if (!story) {
     return notFound()
   }
@@ -71,8 +73,9 @@ export async function getStaticProps(context) {
       story,
       global,
       locales,
+      preview,
     },
-    revalidate: 3600,
+    revalidate: !preview ? 3600 : 1,
   }
 }
 
